@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+ <section class="contact-container">
+    <!-- Heading -->
+    <div class="contact-header">
+      <h1>Contact our team</h1>
+      <p>Got any questions about the product or scaling on our platform? 
+         Chat to our friendly team 24/7 and get onboard in less than 5 minutes.</p>
+    </div>
+
+    <!-- Left: Form -->
+    <form action="{{url_for('contact')}}" class="contact-form" method="post">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First name</label>
+          <input type="text" name="firstname" id="fname" placeholder="First name">
+        </div>
+        <div class="form-group">
+          <label for="lname">Last name</label>
+          <input type="text" name="lastname" id="lname" placeholder="Last name">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="you@company.com">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input type="tel" name="phonenumber" id="phone" placeholder="+1 (555) 000-0000">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" placeholder="Leave us a message..."></textarea>
+      </div><br>
+
+      <button class="submit-btn">Send message</button>
+    </form>
+
+    <!-- Right: Info -->
+    <div class="contact-info">
+      <h3>Chat with us</h3>
+      <div class="info-block">
+        <h4>Email</h4>
+        <a href="mailto:princenaroliya@gmail.com">naroliyaprince@gmail.com</a>
+      </div>
+      <div class="info-block">
+        <h4>Call us</h4>
+        <p>Mon-Fri from 8am to 5pm</p>
+        <a href="tel:+918054544218">+91 8054544218</a>
+      </div>
+      <div class="info-block">
+        <h4>Visit us</h4>
+        <p>100 Smith Street, Collingwood VIC 3066</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

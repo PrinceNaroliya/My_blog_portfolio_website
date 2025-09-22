@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+<div class="blog_page_content" style="line-height:0;">
+  <div class="blog-meta">
+    <span>By Prince</span>
+    <span>•</span>
+    <span>{{ blog.date_posted.strftime('%b %d, %Y') }}</span>
+  </div>
+  <h1 class="blog_title">{{blog.title}}</h1>
+  <div class="blog_image">
+    <img src="{{ url_for('static', filename='images/' ~ blog.image) }}" alt="Blog Image">
+  </div>
+    {{ blog.content|safe }}
+</div>
+
+<div class="sidebar">
+  {% for blog in blogs %}
+  <div class="sidebar-card">
+    <div class="sidebar-thumb">
+      <img src="{{ url_for('static', filename='images/' ~ blog.image) }}" alt="Blog Image">
+    </div>
+    <div class="sidebar-info">
+      <h3>
+        <a class="blog_title_link" href="/blog/{{ blog.id }}">
+          {{ (blog.title|striptags)[:42] }}
+        </a>
+      </h3>
+      <p class="sidebar-excerpt">
+        <a class="blog_description_link" href="/blog/{{ blog.id }}">{{ (blog.content|striptags)[:50] }}...</a>
+      </p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="author-bio-card">
+    <div class="author-bio-header">WRITTEN BY</div>
+    <div class="author-bio-main">
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Prince Naroliya" class="author-bio-photo">
+        <div class="author-bio-info">
+            <h3>Prince Naroliya</h3>
+            <p class="author-bio-role">Python Developer & Open Source Contributor</p>
+            <div class="socials">
+                <a class="footer_social_icons" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="footer_social_icons" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="footer_social_icons" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="author-bio-text">
+                A passionate developer who loves building web applications, exploring AI/ML, and contributing to open-source projects.  
+                Always eager to learn new technologies and share knowledge with the community.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <img src="{{ url_for('static', filename='images/intersteller.jpg') }}" alt="Main Banner" class="main_image">
+    <div class="main_paragraph">
+      <img src="{{ url_for('static', filename='images/astronaut-4968983.jpg') }}" alt="Main Banner" class="main_image">
+    <h1>Welcome to my space!</h1>
+    <p>
+        Here, I share insights on Python, Web Development, and Open Source projects. 
+        Dive in to explore tutorials, project showcases, and tips to level up your coding journey. 
+        Stay curious and keep learning!🚀
+    </p>
+    </div>
+</section>
+
+<section class="blog-section">
+    <h2 class="section-title">Explore Our Newest Ideas</h2>
+    <p>___________________________________________________________________________________________________________________________________________________________</p>
+    <div class="blog-grid">
+        <!-- Example Blog Card -->
+         {% for blog in blogs %}
+        <div class="blog-card">
+            <img src="{{ url_for('static', filename='images/' ~ blog.image) }}" alt="Blog Image">
+            <div class="card-content">
+                <h3><a class="blog_card_title_home_page" href="/blog/{{ blog.id }}">
+                  {{blog.title}}
+                </a></h3>
+                <p>{{(blog.content|striptags)[:100]}}...</p><br>
+                <div class="blog-meta">
+                  <span>By Prince</span>
+                  <span>•</span>
+                  <span>{{ blog.date_posted.strftime('%b %d, %Y') }}</span>
+                </div><br>
+                <a href="/blog/{{ blog.id }}" class="read-more">Read More →</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+<div class="blog-list">
+
+  <!-- Blog Item 1 -->
+   {% for blog in blogs %}
+  <div class="blog-item">
+    <div class="blog-thumb">
+      <img src="{{ url_for('static', filename='images/' ~ blog.image) }}" alt="Blog Image">
+    </div>
+    <div class="blog-info">
+      <a href="/blog/{{blog.id}}" style="text-decoration: none;">
+        <h2 class="blog-title">{{blog.title}}</h2>
+      </a>
+      <p class="blog-excerpt">
+        {{(blog.content|striptags)[:250]}}...
+      </p>
+      <div class="blog-meta">
+        <span>By Prince</span>
+        <span>•</span>
+        <span>{{ blog.date_posted.strftime('%b %d, %Y') }}</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}   
+
+</div>
+
+    <div class="all-blogs-container">
+        <h2>Want to explore more blogs?</h2>
+        <p>
+            Stay updated with our latest insights, tutorials, and stories.  
+            From Python tips to web development guides, find everything you need in one place.
+        </p>
+        <a href="{{ url_for('blog_page') }}" class="all-blogs-link">
+            Explore All Blogs →
+        </a>
+    </div>
+
+</section>
+{% endblock %}

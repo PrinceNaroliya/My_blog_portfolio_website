@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+      <h2>Manage Blogs</h2>
+      <table border="1" width="100%" cellspacing="0" cellpadding="10">
+        <tr>
+          <th>Sno.</th>
+          <th>Title</th>
+          <th>Image url</th>
+          <th>Actions</th>
+        </tr>
+        {% for blog in blogs %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{blog.title}}</td>
+          <td>{{blog.image}}</td>
+          <td>
+            <a href="/edit_blog/{{blog.id}}"><input type="button" class="btn btn-danger" value="Edit"></a>
+            <a href="/delete_blog/{{blog.id}}"><input type="button" class="btn btn-danger" value="Delete"></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock %}

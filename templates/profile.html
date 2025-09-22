@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block title %}Profile - Prince Naroliya{% endblock %}
+{% block body_class %}profile-page{% endblock %}
+
+{% block content %}
+
+<section class="profile-cover">
+    <img src="{{ url_for('static', filename='images/intersteller.jpg') }}" alt="Cover Image" class="cover-image">
+</section>
+
+<section class="profile-card-section">
+    <div class="profile-card">
+        <div class="profile-image">
+            <img src="{{ url_for('static', filename='images/intersteller.jpg') }}" alt="Prince Naroliya">
+        </div>
+        <div class="profile-info">
+            <h1>Prince Naroliya</h1>
+            <p class="role">Python Developer & Open Source Contributor</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/princenaroliya"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/prince-naroliya-ab4153313/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/PrinceNaroliya"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="summary-section">
+    <div class="card">
+        <h2>Summary</h2>
+        <p>
+            Passionate developer building web applications, exploring AI/ML, contributing to open-source projects,
+            and always learning new technologies. Skilled in Python, Flask, HTML/CSS, and SQL. Eager to collaborate
+            on innovative projects and make an impact in the tech community.
+        </p>
+    </div>
+</section>
+
+<section class="experience-section">
+    <div class="card">
+        <h2>Experience & Achievements</h2>
+        <ul>
+            <li>
+                <strong>Python Developer</strong> - Freelance | 2023 - Present  
+                <br><em>Worked on automation scripts, small web apps, and data analysis projects. Delivered 5+ client projects successfully.</em>
+            </li><br>
+            <li>
+                <strong>Open Source Contributor</strong> - GitHub | 2022 - Present  
+                <br><em>Contributed to 10+ repositories, fixed bugs, and added features in Python and JavaScript projects. Gained 200+ stars on contributions.</em>
+            </li><br>
+            <li>
+                <strong>Web Developer Intern</strong> - XYZ Company | 2021 - 2022  
+                <br><em>Built responsive web pages, optimized website performance, and collaborated with the design team to improve UI/UX.</em>
+            </li><br>
+            <li>
+                <strong>Machine Learning Enthusiast</strong> - Personal Projects | 2023  
+                <br><em>Implemented small ML projects like sentiment analysis, image classifier, and recommendation systems to improve practical ML skills.</em>
+            </li><br>
+            <li>
+                <strong>Blog Writer & Educator</strong> - Medium | 2022 - Present  
+                <br><em>Wrote 15+ technical articles on Python, Web Development, and Machine Learning, helping beginners learn step by step.</em>
+            </li>
+        </ul>
+    </div>
+
+<div class="side-quote-container">
+  <div class="quote-card">
+    <img src="{{ url_for('static', filename='images/astronaut-4968983.jpg') }}" alt="Motivational Image">
+    <p class="quote">"The best way to get started is to quit talking and begin doing." – Walt Disney</p>
+  </div>
+
+  <div class="quote-card">
+    <img src="{{ url_for('static', filename='images/astronaut-4968983.jpg') }}" alt="Motivational Image">
+    <p class="quote">"Dream big and dare to fail." – Norman Vaughan</p>
+  </div>
+</div>
+</section>
+
+<section class="skill-section">
+    <div class="card">
+        <h2>Skills</h2>
+        <ul>
+            <li>
+                <img src="https://skillicons.dev/icons?i=python" alt="Python" class="skill-icon">
+                <strong>Python</strong> - Backend programming, scripting, automation
+            </li>
+            <li>
+                <img src="https://skillicons.dev/icons?i=flask" alt="Flask" class="skill-icon">
+                <strong>Flask</strong> - Web application development, REST APIs
+            </li>
+            <li>
+                <img src="https://skillicons.dev/icons?i=html" alt="HTML" class="skill-icon">
+                <strong>HTML</strong> - Frontend markup language
+            </li>
+            <li>
+                <img src="https://skillicons.dev/icons?i=css" alt="CSS" class="skill-icon">
+                <strong>CSS</strong> - Styling and responsive design
+            </li>
+            <li>
+                <img src="https://skillicons.dev/icons?i=scikitlearn" alt="Scikit-Learn" class="skill-icon">
+                <strong>Scikit-Learn</strong> - Data analysis, predictive modeling, ML experiments
+            </li>
+            <li>
+                <img src="https://skillicons.dev/icons?i=git" alt="Git" class="skill-icon">
+                <strong>Git</strong> - Version control system
+            </li>
+            <li>
+                <img src="https://skillicons.dev/icons?i=github" alt="GitHub" class="skill-icon">
+                <strong>GitHub</strong> - Repository hosting and collaboration
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="hobbies-section">
+    <div class="card">
+        <h2>Hobbies & Interests</h2>
+        <ul>
+            <li>Coding challenges and learning new tech</li>
+            <li>Reading tech blogs and AI articles</li>
+            <li>Gaming and problem-solving</li>
+            <li>Open-source contribution and collaboration</li>
+        </ul>
+    </div>
+</section>
+
+{% endblock %}

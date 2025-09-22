@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+<div class="blog-list-blog-page">
+
+  <!-- Blog Item 1 -->
+   {% for blog in blogs %}
+  <div class="blog-item">
+    <div class="blog-thumb">
+      <img src="{{ url_for('static', filename='images/' ~ blog.image) }}" alt="Blog Image">
+    </div>
+    <div class="blog-info">
+      <a href="/blog/{{blog.id}}" style="text-decoration: none;">
+        <h2 class="blog-title">{{blog.title}}</h2>
+      </a>
+      <p class="blog-excerpt">
+        {{(blog.content|striptags)[:250]}}...
+      </p>
+      <div class="blog-meta">
+        <span>By Prince</span>
+        <span>•</span>
+        <span>{{ blog.date_posted.strftime('%b %d, %Y') }}</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}   
+
+</div>
+{% endblock %}
