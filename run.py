@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect, jsonify 
+from flask import Flask, render_template, request, url_for, redirect, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy 
 from flask_ckeditor import CKEditor, CKEditorField 
 from werkzeug.utils import secure_filename 
@@ -140,6 +140,9 @@ def delete_contact_message(id):
 def profile():
     return render_template('profile.html')
 
+@app.route("/google18a9e13cfb4bc401.html")
+def google_verify():
+    return send_from_directory("static", "google18a9e13cfb4bc401.html")
 
 if __name__ == "__main__":
     with app.app_context():
