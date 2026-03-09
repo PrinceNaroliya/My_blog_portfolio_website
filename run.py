@@ -3,12 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_ckeditor import CKEditor, CKEditorField 
 from werkzeug.utils import secure_filename 
 import os 
+from dotenv import load_dotenv
 from datetime import datetime
 
 app = Flask(__name__)
 
 # Config
-app.config['SECRET_KEY'] = 'super_secret_key'
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blogs.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/images'
@@ -147,4 +148,4 @@ def google_verify():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run(debug=False)
