@@ -1,6 +1,14 @@
-# My Personal Portfolio & Blog Website 🌌
+# Flask Portfolio & Blog Website 🌌
 
 Welcome to my **personal portfolio and blog website**! This project showcases my skills, projects, achievements, and blog posts in a clean, modern, and professional design with a **space-inspired black & white theme**.
+
+---
+
+## 🌐 Live Demo
+
+You can view the live website here:
+
+https://princenaroliya.onrender.com/
 
 ---
 
@@ -36,28 +44,91 @@ Welcome to my **personal portfolio and blog website**! This project showcases my
 
 ---
 
+## ⚙️ Installation
+
+Follow these steps to run the project locally:
+
+1. Clone the repository
+
+```
+git clone https://github.com/yourusername/yourrepo.git
+```
+
+2. Navigate to the project folder
+
+```
+cd yourrepo
+```
+
+3. Create a virtual environment
+
+```
+python -m venv venv
+```
+
+4. Activate the virtual environment
+
+Windows:
+
+```
+venv\Scripts\activate
+```
+
+Mac/Linux:
+
+```
+source venv/bin/activate
+```
+
+5. Install dependencies
+
+```
+pip install -r requirements.txt
+```
+
+6. Run the Flask application
+
+```
+python run.py
+```
+
+7. Open your browser and go to:
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
 ## 📁 Project Structure
 
+```
 my-flask-website/
 │
-├── app/ # Flask app folder (optional)
-├── static/ # CSS, JS, Images
-├── templates/ # HTML templates
-├── run.py # Main Flask file
+├── static/          # CSS, JS, Images
+├── templates/       # HTML templates
+├── run.py           # Main Flask file
 ├── requirements.txt # Python dependencies
-├── Procfile # For deployment (Render/Heroku)
-└── README.md # This file
-
+├── Procfile         # For deployment (Render/Heroku)
+└── README.md        # This file
+```
 
 ---
 
 ## ⚡ Deployment
 
-This website is ready to deploy on **Render, Heroku, or PythonAnywhere**.  
-**Render Recommended (Free Tier):**
+This website is ready to deploy on **Render, Heroku, or PythonAnywhere**.
+
+### Render Recommended (Free Tier)
+
 1. Connect your GitHub repo to Render.  
 2. Set up the web service with Python runtime.  
-3. Procfile command:  web: waitress-serve --threads=8 --host=0.0.0.0 --port=$PORT run:app
+3. Procfile command:
+
+```
+web: waitress-serve --threads=8 --host=0.0.0.0 --port=$PORT run:app
+```
+
 4. Render will automatically build and deploy your app.  
 5. Future updates? Just `git push` and Render auto-deploys.
 
@@ -82,10 +153,9 @@ This website is ready to deploy on **Render, Heroku, or PythonAnywhere**.
 ## 📫 Contact
 
 - **Email:** your.email@example.com  
-- **GitHub:** [github.com/yourusername](https://github.com/yourusername)  
-- **LinkedIn:** [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
+- **GitHub:** https://github.com/yourusername  
+- **LinkedIn:** https://linkedin.com/in/yourprofile  
 
 ---
 
-> Made with ❤️ by [Your Name]
-
+> Made with ❤️ by Prince Naroliya
